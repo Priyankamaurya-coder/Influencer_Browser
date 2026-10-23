@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CreatorScope | Influencer Browser</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="CreatorScope home"><span class="brand-mark">C</span><span>creator<span class="brand-light">scope</span></span></a>
+    <span class="top-note"><span class="live-dot"></span> Creator discovery workspace</span>
+  </header>
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">DISCOVER · COMPARE · CONNECT</p>
+        <h1>Find your next<br><span>creator partnership.</span></h1>
+        <p class="hero-copy">Explore creator profiles, understand their audience, and compare engagement at a glance.</p>
+      </div>
+      <div class="hero-stat"><div class="stat-icon">✦</div><div><strong id="creatorCount">10</strong><span>creator profiles</span></div><div class="stat-divider"></div><div><strong>2</strong><span>platforms</span></div></div>
+    </section>
+    <section class="toolbar">
+      <label class="search-box"><span class="search-icon">⌕</span><input id="searchInput" type="search" placeholder="Search creators or usernames..." autocomplete="off"><kbd>⌘ K</kbd></label>
+      <div class="filters" role="group" aria-label="Filter by platform">
+        <button class="filter active" data-platform="All">All creators <span id="allCount">10</span></button>
+        <button class="filter" data-platform="Instagram"><span class="ig-dot"></span> Instagram <span id="igCount">5</span></button>
+        <button class="filter" data-platform="YouTube"><span class="yt-dot"></span> YouTube <span id="ytCount">5</span></button>
+      </div>
+    </section>
+    <section class="results-heading"><div><h2>Creator directory</h2><p id="resultLabel">Showing all 10 creators</p></div><span class="sort-label">SORTED BY <strong>ENGAGEMENT</strong></span></section>
+    <section id="creatorGrid" class="creator-grid" aria-live="polite"></section>
+    <div id="emptyState" class="empty-state" hidden><span>⌕</span><h3>No creators found</h3><p>Try a different name or platform filter.</p></div>
+    <footer><span>CreatorScope <span class="footer-dot">●</span> Influencer discovery demo</span><span>Sample profiles · Metrics are illustrative</span></footer>
+  </main>
+  <div id="profileModal" class="modal" hidden>
+    <div class="modal-backdrop" data-close="true"></div>
+    <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalName">
+      <button class="close-button" id="closeModal" aria-label="Close profile">×</button>
+      <div id="profileContent"></div>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
